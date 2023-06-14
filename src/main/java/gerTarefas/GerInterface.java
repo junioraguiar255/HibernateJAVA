@@ -85,8 +85,9 @@ public class GerInterface {
         combo.setModel(new DefaultComboBoxModel(lista.toArray()));
     }
     public void carregarComboGeneros(JComboBox combo) throws SQLException{
-        List<Genero> lista = gerDominio.listarGeneros();
-        combo.setModel(new DefaultComboBoxModel(lista.toArray()));
+    List<Genero> lista = gerDominio.listarGeneros();
+    DefaultComboBoxModel<Genero> model = new DefaultComboBoxModel<>(lista.toArray(new Genero[0]));
+    combo.setModel(model);
     }
     public void carregarComboIdiomas(JComboBox combo) throws SQLException{
         List<Idioma> lista = gerDominio.listarIdiomas();

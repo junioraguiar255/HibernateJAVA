@@ -224,16 +224,13 @@
         <Component class="javax.swing.JComboBox" name="cmbAutor">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="William Shakespeare"/>
-                <StringItem index="1" value="Mark Twain"/>
-                <StringItem index="2" value="Mark Twain"/>
-                <StringItem index="3" value="J.K. Rowling"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="MenuLivro_cmbAutor"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Autor&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtAno">
@@ -246,29 +243,21 @@
         <Component class="javax.swing.JComboBox" name="cmbIdioma">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="Portugu&#xea;s"/>
-                <StringItem index="1" value="Ingl&#xea;s"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Idioma&gt;"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbGenero">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Romance"/>
-                <StringItem index="1" value="Com&#xe9;dia"/>
-                <StringItem index="2" value="Terror"/>
-                <StringItem index="3" value="Document&#xe1;rio"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Genero&gt;"/>
           </AuxValues>
         </Component>
       </SubComponents>

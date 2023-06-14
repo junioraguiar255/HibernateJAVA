@@ -137,17 +137,11 @@ public class MenuLivro extends javax.swing.JDialog {
         jLabel7.setText("Foto");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        cmbAutor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "William Shakespeare", "Mark Twain", "Mark Twain", "J.K. Rowling" }));
-
         try {
             txtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-
-        cmbIdioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Português", "Inglês" }));
-
-        cmbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Comédia", "Terror", "Documentário" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -240,24 +234,47 @@ public class MenuLivro extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+
             //pesquisa por id
             String idBusca = jTextField13.getText();
             
             Livro livro = gerIG.getGerDominio().findLivroByID(Integer.parseInt(idBusca));
             
             if(livro==null){
-                JOptionPane.showMessageDialog(this, "Livro não encontrado.", "Biuscar livro", JOptionPane.INFORMATION_MESSAGE  );
-            }
-            
-            
-            txtNome.setText(livro.getNome());
-            cmbAutor.setName(livro.getAutor().toString());
-            cmbGenero.setName(livro.getGenero().toString());
-            txtAno.setText(Integer.toString(livro.getAno()));
-            cmbIdioma.setName(livro.getIdioma().toString());
-            spnQtd.setValue(livro.getQtd());
-            
+            JOptionPane.showMessageDialog(this, "Livro não encontrado.", "Biuscar livro", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        txtNome.setText(livro.getNome());
+        txtAno.setText(Integer.toString(livro.getAno()));
         
+        // Encontre o gênero na lista e defina-o como selecionado
+        for (int i = 0; i < cmbGenero.getItemCount(); i++) {
+            Genero genero = (Genero) cmbGenero.getItemAt(i);
+            if (genero.getIdGenero() == livro.getGenero().getIdGenero()) {
+                cmbGenero.setSelectedItem(genero);
+                break;
+            }
+        }
+        
+                // Encontre o gênero na lista e defina-o como selecionado
+        for (int i = 0; i < cmbAutor.getItemCount(); i++) {
+            Autor autor = (Autor) cmbAutor.getItemAt(i);
+            if (autor.getIdAutor()== livro.getAutor().getIdAutor()) {
+                cmbAutor.setSelectedItem(autor);
+                break;
+            }
+        }
+        
+                for (int i = 0; i < cmbIdioma.getItemCount(); i++) {
+            Idioma idioma = (Idioma) cmbIdioma.getItemAt(i);
+            if (idioma.getIdIdioma()== livro.getIdioma().getIdIdioma()) {
+                cmbIdioma.setSelectedItem(idioma);
+                break;
+            }
+        }
+
+
+
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -266,6 +283,8 @@ public class MenuLivro extends javax.swing.JDialog {
         Autor autorSelecionado = (Autor) cmbAutor.getSelectedItem();
         Genero generoSelecionado = (Genero) cmbGenero.getSelectedItem();
         Idioma idiomaSelecionado = (Idioma) cmbIdioma.getSelectedItem();
+        
+        
         
         String genero = cmbGenero.getSelectedItem().toString();
         String ano = txtAno.getText();
@@ -383,9 +402,9 @@ public class MenuLivro extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPesquisar;
-    private javax.swing.JComboBox<String> cmbAutor;
-    private javax.swing.JComboBox<String> cmbGenero;
-    private javax.swing.JComboBox<String> cmbIdioma;
+    public javax.swing.JComboBox<Autor> cmbAutor;
+    private javax.swing.JComboBox<Genero> cmbGenero;
+    private javax.swing.JComboBox<Idioma> cmbIdioma;
     private javax.swing.JComboBox cmbTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

@@ -30,5 +30,22 @@ public class Idioma implements Serializable{
     public String toString() {
         return lingua;
     }
+
+    public int getIdIdioma() {
+        return idIdioma;
+    }
+
+    public void setIdIdioma(int idIdioma) {
+        this.idIdioma = idIdioma;
+    }
+
+    public String getLingua() {
+        return lingua;
+    }
+
+    public void setLingua(String lingua) {
+        this.lingua = lingua;
+    }
+    
     
 }
